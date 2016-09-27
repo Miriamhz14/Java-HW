@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+<div id="container">
+ <div id="animation"> <img src="nemo.jpg"> </div>
+ </div>
+
+ <p>
+ <button onclick="move()"> Move </button>
+</p>
+
+
+<style>
+	body {
+		background-image: url("sea.jpg");
+	}
+	#container {
+		width: 1000px;
+		height: 900px;
+		position: relative;
+		background-image: url(cont.jpg);
+		float: left;
+	}
+	#animation {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+	}
+	.menu {
+		position: relative;
+		display: inline-block;
+		background-color: pink;
+		border: 2px;
+		float: right;
+		margin-right: 367px;
+	}
+	.list {
+		display: none;
+		position: absolute;
+		background-color: #cd5c5c;
+	}
+	.menu:hover  .list{
+		display: block;
+	}
+	button {
+		position: right;
+		font-size: 16px;
+	}
+</style>
+
+<div class="menu"> 
+	<button onclick="dropdown()"> Click </button>
+	<div class="list">
+	<p>
+	 Bubbles<br>
+	 Squirt <br>
+	 Dory <br>
+	 Marlin<br>
+	 </p>
+	
+	</div>
+</div>
+
+
+
+ </body>
+
+ <script>
+ function move() {
+ 	var elem = document.getElementById("animation");
+ 	var pos = 0;
+ 	var id = setInterval(frame,5);
+ 	function frame() {
+ 		if (pos == 520) {
+ 			clearInterval(id);
+ 		} else {
+ 			pos++;
+ 			elem.style.top = pos + 'px';
+ 			elem.style.left = pos + 'px';
+ 		}
+ 	}
+ }
+ </script>
+
+</html>
